@@ -22,7 +22,6 @@ function App() {
                         <PizzaBlock title="Мексиканская" price= {500}/>
                         <PizzaBlock title="Мексиканская" price={500}/>
                         <PizzaBlock title="Мексиканская" price={500}/>
-                        <PizzaBlock title="Мексиканская" price={500}/>
                     </div>
                 </div>
             </div>
