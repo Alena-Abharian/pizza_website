@@ -53,8 +53,23 @@ a {
   align-items: center;
   justify-content: space-between;
 }
+@media (max-width: 645px) {
+  .header .container {
+    flex-direction: column;
+  }
+  .header .container .header__cart {
+    margin-top: 20px;
+  }
+}
 .header__logo {
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.header__logo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .header__logo img {
   margin-right: 15px;
@@ -272,8 +287,9 @@ a {
   text-align: center;
   margin-bottom: 65px;
 }
-.pizza-block:not(:nth-of-type(4n)) {
-  margin-right: 35px;
+.pizza-block-wrap {
+  display: flex;
+  justify-content: center;
 }
 .pizza-block__image {
   width: 260px;
@@ -343,22 +359,62 @@ body {
   border-radius: 10px;
   max-width: 1400px;
 }
+@media (max-width: 645px) {
+  .wrapper {
+    width: calc(100vw - 30px);
+    margin-top: 15px;
+  }
+}
 
 .content {
   padding: 40px 0;
 }
 .content__title {
   margin: 35px 0;
+  font-size: 35px;
 }
 .content__items {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 11px;
+}
+@media (max-width: 1400px) {
+  .content__items {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 1060px) {
+  .content__items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 730px) {
+  .content__items {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 .content__top {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+@media (max-width: 1260px) {
+  .content__top {
+    flex-direction: column-reverse;
+  }
+  .content__top .categories {
+    margin-top: 15px;
+  }
+  .content__top .categories ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .content__top .categories ul li {
+    margin-top: 15px;
+    padding: 8px 20px;
+  }
 }
 
 .container {
@@ -422,6 +478,9 @@ body {
 }
 .cart__clear:hover span {
   color: #373737;
+}
+.cart .content__items {
+  display: block;
 }
 .cart__item {
   display: flex;
