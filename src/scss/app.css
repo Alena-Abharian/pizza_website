@@ -63,13 +63,13 @@ a {
 }
 .header__logo {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  flex-direction: row;
 }
 .header__logo-wrap {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  flex-direction: column;
 }
 .header__logo img {
   margin-right: 15px;
