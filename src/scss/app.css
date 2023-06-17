@@ -369,6 +369,19 @@ body {
 .content {
   padding: 40px 0;
 }
+.content__error-info {
+  margin: 100px auto;
+  width: 500px;
+  text-align: center;
+}
+.content__error-info h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.content__error-info p {
+  font-size: 20px;
+}
 .content__title {
   margin: 35px 0;
   font-size: 35px;
