@@ -2,8 +2,14 @@ import React, {useContext, useEffect, useRef} from 'react';
 import qs from "qs";
 import {useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import {setCategoryId, setCurrentPage, setFilters} from "../redux/slices/filterSlice";
-import {fetchPizzas} from "../redux/slices/pizzaSlice";
+import {
+    selectFilterCategoryId, selectFilterCurrentPage, selectFilterSearchValue,
+    selectFilterSortProperty,
+    setCategoryId,
+    setCurrentPage,
+    setFilters
+} from "../redux/slices/filterSlice";
+import {fetchPizzas, selectPizzaData} from "../redux/slices/pizzaSlice";
 
 import Categories from "../components/Categories";
 import Sort, {list} from "../components/Sort";
@@ -17,15 +23,14 @@ const Home = () => {
     const navigate = useNavigate();
 
     const dispatch = useDispatch();
-    const categoryId = useSelector(state => state.filter.categoryId);
-    const sortType = useSelector(state => state.filter.sort.sortProperty);
-    const currentPage = useSelector(state => state.filter.currentPage);
-    const {items, status} = useSelector(state => state.pizza);
+    const categoryId = useSelector(selectFilterCategoryId);
+    const sortType = useSelector(selectFilterSortProperty);
+    const currentPage = useSelector(selectFilterCurrentPage);
+    const searchValue = useSelector(selectFilterSearchValue);
+    const {items, status} = useSelector(selectPizzaData);
 
     const isSearch = useRef(false)
     const isMounted = useRef(false);
-
-    const {searchValue} = useContext(SearchContext);
 
     const onChangeCategory = (id) => {
         dispatch(setCategoryId(id))
