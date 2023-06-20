@@ -10,15 +10,32 @@
     justify-content: center;
   }
 
+  &-wrapOne{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   &__image {
     width: 260px;
+  }
+
+  &__imageOne {
+    width: 350px;
+    margin-right: 20px;
   }
 
   &__title {
     font-size: 20px;
     font-weight: 900;
     letter-spacing: 1%;
+    margin-bottom: 20px;
+  }
+
+  &__text{
+    width: 600px;
+    font-size: 18px;
+    font-weight: 400;
     margin-bottom: 20px;
   }
 

@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useRef} from 'react';
+import React, {useEffect, useRef} from 'react';
 import qs from "qs";
 import {useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
@@ -16,7 +16,6 @@ import Sort, {list} from "../components/Sort";
 import Skeleton from "../components/PizzaBlock/Skeleton";
 import PizzaBlock from "../components/PizzaBlock";
 import Pagination from "../components/Pagination";
-import {SearchContext} from "../App";
 
 
 const Home = () => {
@@ -95,7 +94,7 @@ const Home = () => {
         isSearch.current = false;
     }, [categoryId, sortType, searchValue, currentPage])
 
-    const pizzas = items.map((obj) => <PizzaBlock key={obj.id} {...obj}/>)
+    const pizzas = items.map((obj) =><PizzaBlock key={obj.id} {...obj}/>)
 
     const skeletons = [...new Array(6)].map((_, index) => <Skeleton key={index}/>)
 
