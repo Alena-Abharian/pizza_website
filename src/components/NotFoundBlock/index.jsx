@@ -7,9 +7,9 @@ const NotFoundBlock = () => {
     <h1>
         <span>😢</span>
         <br/>
-        Ничего не найдено
+        Nothing found
     </h1>
-    <p className={styles.description}>К сожалению данная страница отсуцтвует</p>
+    <p className={styles.description}>Sorry, this page does not exist</p>
 </div>
     );
 };

@@ -41,7 +41,7 @@ const Cart = () => {
                                 stroke="white" strokeWidth="1.8" strokeLinecap="round"
                                 strokeLinejoin="round"/>
                         </svg>
-                        Корзина
+                        Basket
                     </h2>
                     <div onClick={onClickClear} className="cart__clear">
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
@@ -58,7 +58,7 @@ const Cart = () => {
                                   strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
 
-                        <span>Очистить корзину</span>
+                        <span>Empty trash</span>
                     </div>
                 </div>
                 <div className="content__items">
@@ -68,8 +68,8 @@ const Cart = () => {
                 </div>
                 <div className="cart__bottom">
                     <div className="cart__bottom-details">
-                        <span> Всего пицц: <b>{totalCount} шт.</b> </span>
-                        <span> Сумма заказа: <b>{totalPrice} ₽</b> </span>
+                        <span> Total pizzas: <b>{totalCount} qt.</b> </span>
+                        <span> Order summary: <b>$ {Math.abs(totalPrice).toFixed(2)}</b> </span>
                     </div>
                     <div className="cart__bottom-buttons">
                         <Link to="/" className="button button--outline button--add go-back-btn">
@@ -79,10 +79,10 @@ const Cart = () => {
                                       strokeLinecap="round" strokeLinejoin="round"/>
                             </svg>
 
-                            <span>Вернуться назад</span>
+                            <span>Come back</span>
                         </Link>
                         <div className="button pay-btn">
-                            <span>Оплатить сейчас</span>
+                            <span>Pay now</span>
                         </div>
                     </div>
                 </div>

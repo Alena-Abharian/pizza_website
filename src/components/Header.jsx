@@ -20,7 +20,7 @@ function Header() {
                     <img width="38" src={logoSvg} alt="Pizza logo"/>
                     <div className="header__logo-wrap">
                         <h1>Pizza</h1>
-                        <p>самая вкусная пицца</p>
+                        <p>The most delicious pizza</p>
                     </div>
                 </div>
                 </Link>
@@ -28,7 +28,7 @@ function Header() {
                 <div className="header__cart">
                 {location.pathname !== '/cart' && (
                     <Link to="/cart" className="button button--cart">
-                            <span>{totalPrice} ₽</span>
+                            <span>$ {Math.abs(totalPrice).toFixed(2)}</span>
                             <div className="button__delimiter"></div>
                             <svg
                                 width="18"
