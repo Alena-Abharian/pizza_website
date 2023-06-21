@@ -43,7 +43,7 @@ const Search = () => {
                 value={value}
                 onChange={onChangeInput}
                 className={styles.input}
-                placeholder='поиск пиццы...'
+                placeholder='pizza search...'
             />
             {value &&
                 <button onClick={onClickClear} className={styles.cross}>X</button>}

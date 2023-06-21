@@ -12,7 +12,7 @@ function PizzaBlock({id, title, price, imageUrl, sizes, types}) {
     const [sizeActive, setSizeActive] =useState(0)
     const [typeActive, setTypeActive] =useState(0)
 
-    const typeName = ['тонкое', 'традиционное']
+    const typeName = ['thin', 'traditional']
 
     const addedCount = cartItem ? cartItem.count : 0;
 
@@ -44,11 +44,11 @@ function PizzaBlock({id, title, price, imageUrl, sizes, types}) {
                        {types.map((typeId) => <li key={typeId} onClick={() => setTypeActive(typeId)} className={typeActive === typeId ? "active" : ''}>{typeName[typeId]}</li>)}
                    </ul>
                    <ul>
-                       {sizes.map((value, i) => (<li key={i} onClick={() => setSizeActive(i)} className={sizeActive === i ? "active" : ''}>{value} см.</li>))}
+                       {sizes.map((value, i) => (<li key={i} onClick={() => setSizeActive(i)} className={sizeActive === i ? "active" : ''}>{value} in</li>))}
                    </ul>
                </div>
                <div className="pizza-block__bottom">
-                   <div className="pizza-block__price">от {price} ₽</div>
+                   <div className="pizza-block__price">$ {price}</div>
                    <button onClick={onClickAdd} className="button button--outline button--add">
                        <svg
                            width="12"
@@ -62,7 +62,7 @@ function PizzaBlock({id, title, price, imageUrl, sizes, types}) {
                                fill="white"
                            />
                        </svg>
-                       <span>Добавить</span>
+                       <span>Order</span>
                        {addedCount > 0 && <i>{addedCount}</i>}
                    </button>
                </div>

@@ -32,7 +32,7 @@ const CartItem = ({id,  title, type, size, price, count, imageUrl}) => {
             </div>
             <div className="cart__item-info">
                 <h3>{title}</h3>
-                <p>{type}, {size} см.</p>
+                <p>{type}, {size} in</p>
             </div>
             <div className="cart__item-count">
                 <div onClick={onClickMinus}  className="button button--outline button--circle cart__item-count-minus">
@@ -62,7 +62,7 @@ const CartItem = ({id,  title, type, size, price, count, imageUrl}) => {
                 </div>
             </div>
             <div className="cart__item-price">
-                <b>{price * count} ₽</b>
+                <b>$ {(price * count).toFixed(2)}</b>
             </div>
             <div className="cart__item-remove">
                 <div onClick={onClickRemove} className="button button--outline button--circle">
