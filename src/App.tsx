@@ -10,7 +10,7 @@ import FullPizza from "./pages/FullPizza";
 import MainLayout from "./layouts/MainLayout";
 
 
-function App() {
+const App:React.FC = () => {
     return (
         <Routes>
             <Route path='/' element={<MainLayout/>}>

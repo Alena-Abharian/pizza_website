@@ -18,7 +18,7 @@ import PizzaBlock from "../components/PizzaBlock";
 import Pagination from "../components/Pagination";
 
 
-const Home = () => {
+const Home:React.FC = () => {
     const navigate = useNavigate();
 
     const dispatch = useDispatch();
@@ -31,19 +31,21 @@ const Home = () => {
     const isSearch = useRef(false)
     const isMounted = useRef(false);
 
-    const onChangeCategory = (id) => {
+    const onChangeCategory = (id:number) => {
         dispatch(setCategoryId(id))
     }
 
-    const onChangePage = (number) => {
-        dispatch(setCurrentPage(number))
+    const onChangePage = (numberPage:number) => {
+        dispatch(setCurrentPage(numberPage))
     }
 
     const getPizzas = () => {
         const category = categoryId > 0 ? `category=${categoryId}` : '';
         const search = searchValue ? `&search=${searchValue}` : '';
 
-        dispatch(fetchPizzas({
+        dispatch(
+            //@ts-ignore
+            fetchPizzas({
             category,
             search,
             sortType,
@@ -94,7 +96,7 @@ const Home = () => {
         isSearch.current = false;
     }, [categoryId, sortType, searchValue, currentPage])
 
-    const pizzas = items.map((obj) =><PizzaBlock key={obj.id} {...obj}/>)
+    const pizzas = items.map((obj:any) =><PizzaBlock key={obj.id} {...obj}/>)
 
     const skeletons = [...new Array(6)].map((_, index) => <Skeleton key={index}/>)
 
@@ -102,7 +104,7 @@ const Home = () => {
     return (
         <>
             <div className="content__top">
-                <Categories value={categoryId} onChangeCategory={(i) => onChangeCategory(i)}/>
+                <Categories value={categoryId} onChangeCategory={(i:number) => onChangeCategory(i)}/>
                 <Sort/>
             </div>
             <h2 className="content__title">Pizzas</h2>

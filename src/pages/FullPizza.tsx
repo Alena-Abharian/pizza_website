@@ -2,8 +2,12 @@ import React, {useEffect, useState} from 'react';
 import {useParams, useNavigate} from "react-router-dom";
 import axios from "axios";
 
-const FullPizza = () => {
-    const [pizza, setPizza] = useState()
+const FullPizza:React.FC = () => {
+    const [pizza, setPizza] = useState<{
+        imageUrl:string,
+        title:string,
+        price:number
+    }>()
     const {id} = useParams();
     const navigate = useNavigate();
 
@@ -28,7 +32,7 @@ const FullPizza = () => {
     return (
         <div className="container">
             <div className="pizza-block-wrapOne">
-                <img className="pizza-block__imageOne" src={pizza.imageUrl}/>
+                <img className="pizza-block__imageOne" alt='img pizza' src={pizza.imageUrl}/>
                 <div>
                     <h2 className="pizza-block__title">{pizza.title}</h2>
                     <p className="pizza-block__text">pizza, dish of Italian origin consisting of a flattened disk of bread dough topped with some combination of olive oil, oregano, tomato, olives, mozzarella or other cheese, and many other ingredients, baked quickly—usually,

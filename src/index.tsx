@@ -6,7 +6,7 @@ import {Provider} from "react-redux";
 import {store} from "./redux/store"
 
 
-createRoot(document.getElementById("root")).render(
+createRoot(document.getElementById("root") as HTMLElement).render(
     <BrowserRouter>
         <Provider store={store}>
             <App/>
