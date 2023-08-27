@@ -2,7 +2,7 @@ import React from "react";
 
 type TCategoriesProps = {
     value:number;
-    onChangeCategory:any;
+    onChangeCategory: (arg:number) => void;
 }
 const Categories: React.FC<TCategoriesProps> = ({value, onChangeCategory}) =>{
 
