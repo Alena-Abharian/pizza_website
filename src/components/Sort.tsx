@@ -37,9 +37,10 @@ const Sort:React.FC = () => {
     //
     // }, []);
 
+
     useEffect(() => {
-        const handleClickOutside = (evt:any) => {
-            if (!evt.composedPath().includes(sortRef.current)) {
+        const handleClickOutside = (evt:MouseEvent) => {
+            if (sortRef.current && !evt.composedPath().includes(sortRef.current)) {
                 setOpen(false)
             }
         }
