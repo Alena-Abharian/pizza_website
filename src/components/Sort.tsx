@@ -1,17 +1,17 @@
 import React, {useEffect, useRef, useState} from "react";
 import {useSelector, useDispatch} from "react-redux";
-import {selectSort, setSort} from "../redux/slices/filterSlice";
+import {selectSort, setSort, SortEnum} from "../redux/slices/filterSlice";
 
 
-type TList = {
+type TSortList = {
     name: string;
-    sortProperty: string
+    sortProperty: SortEnum
 }
 
-export const list:TList[] = [
-    {name: 'popularity', sortProperty: "rating"},
-    {name: 'price', sortProperty: "price"},
-    {name: 'alphabet', sortProperty: "title"}];
+export const list:TSortList[] = [
+    {name: 'popularity', sortProperty: SortEnum.RATING},
+    {name: 'price', sortProperty: SortEnum.PRICE},
+    {name: 'alphabet', sortProperty: SortEnum.TITLE}];
 
 const Sort:React.FC = () => {
     const dispatch = useDispatch();
@@ -21,7 +21,7 @@ const Sort:React.FC = () => {
 
     const [open, setOpen] = useState(false);
 
-    const onClickListItem = (obj:TList) => {
+    const onClickListItem = (obj:TSortList) => {
         dispatch(setSort(obj))
         setOpen(false);
     }
