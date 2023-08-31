@@ -2,21 +2,21 @@ import React, {useEffect, useRef} from 'react';
 import qs from "qs";
 import {useNavigate} from "react-router-dom";
 import {useSelector} from "react-redux";
-import {
-    selectFilterCategoryId, selectFilterCurrentPage, selectFilterSearchValue,
-    selectFilterSortProperty,
-    setCategoryId,
-    setCurrentPage,
-    setFilters
-} from "../redux/slices/filterSlice";
-import {fetchPizzas, SearchPizzaParams, selectPizzaData} from "../redux/slices/pizzaSlice";
-
 import Categories from "../components/Categories";
 import Sort, {list} from "../components/Sort";
 import Skeleton from "../components/PizzaBlock/Skeleton";
 import PizzaBlock from "../components/PizzaBlock";
 import Pagination from "../components/Pagination";
 import {useAppDispatch} from "../redux/store";
+import {
+    selectFilterCategoryId,
+    selectFilterCurrentPage, selectFilterSearchValue,
+    selectFilterSortProperty
+} from "../redux/filter/selectors";
+import {setCategoryId, setCurrentPage, setFilters} from "../redux/filter/slice";
+import {selectPizzaData} from "../redux/pizza/selectors";
+import {SearchPizzaParams} from "../redux/pizza/types";
+import {fetchPizzas} from "../redux/pizza/asyncActions";
 
 
 const Home:React.FC = () => {

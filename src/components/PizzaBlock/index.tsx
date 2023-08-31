@@ -1,7 +1,9 @@
 import React, {useState} from "react";
 import {useSelector, useDispatch} from "react-redux";
-import {addItem, selectCartItemById, TCartItem} from "../../redux/slices/cartSlice";
 import {Link} from "react-router-dom";
+import {selectCartItemById} from "../../redux/cart/selectors";
+import {TCartItem} from "../../redux/cart/types";
+import {addItem} from "../../redux/cart/slice";
 
 type TPizzaBlockProps = {
     id:string;
