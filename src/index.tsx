@@ -7,7 +7,7 @@ import {store} from "./redux/store"
 
 
 createRoot(document.getElementById("root") as HTMLElement).render(
-    <BrowserRouter>
+    <BrowserRouter basename='/pizza_website/'>
         <Provider store={store}>
             <App/>
         </Provider>
